@@ -40,7 +40,6 @@ dnf5 -y in libva-intel-driver
 
 # Installs snapd and create symlink to make it work (hopefully)
 dnf5 -y in snapd
-ln -s /var/lib/snapd/snap /snap
 
 # Install distrobox and packages required by homebrew
 dnf5 -y in distrobox @development-tools \
@@ -55,6 +54,10 @@ dnf5 -y in distrobox @development-tools \
 # Disable COPRs so they don't end up enabled on the final image:
 # dnf5 -y copr disable ublue-os/staging
 
-#### Example for enabling a System Unit File
+#### Enabling a System Unit File
 
 systemctl enable podman.socket
+systemctl enable mkdir-rootfs@.service
+systemctl enable snap.mount
+systemctl enable snap-symlink.service
+systemctl enable home.mount
