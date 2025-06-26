@@ -17,13 +17,11 @@ dnf5 -y remove firefox \
                khelpcenter \
                krfb \
                krfb-libs \
-               kf6-kquickcharts-6.15.0-1.fc42.x86_64 \
                kcharselect \
                kwrite \
                plasma-discover-rpm-ostree
 
 ### Post removal cleanup
-dnf5 -y autoremove
 dnf5 clean all
 
 ### Install DNF5 plugins to get the config-manager
