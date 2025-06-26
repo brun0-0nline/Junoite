@@ -43,10 +43,12 @@ dnf5 -y in libva-intel-driver
 # Installs snapd and create symlink to make it work (hopefully)
 dnf5 -y in snapd
 ln -s /var/lib/snapd/snap /snap
-snap set system homedirs=/var/home
 
-# Install distrobox
-dnf5 -y in distrobox
+# Install distrobox and packages required by homebrew
+dnf5 -y in distrobox @development-tools \
+                     procps-ng \
+                     curl \
+                     file
 
 # Use a COPR Example:
 #
