@@ -38,9 +38,6 @@ dnf5 -y --setopt=localpkg_gpgcheck=1 in https://mirrors.rpmfusion.org/free/fedor
 dnf5 -y swap ffmpeg-free ffmpeg --allowerasing
 dnf5 -y in libva-intel-driver
 
-# Installs snapd and create symlink to make it work (hopefully)
-dnf5 -y in snapd
-
 # Install distrobox and packages required by homebrew
 dnf5 -y in distrobox @development-tools \
                      procps-ng \
@@ -57,7 +54,3 @@ dnf5 -y in distrobox @development-tools \
 #### Enabling a System Unit File
 
 systemctl enable podman.socket
-systemctl enable mkdir-rootfs@.service
-systemctl enable snap.mount
-systemctl enable snap-symlink.service
-systemctl enable home.mount
