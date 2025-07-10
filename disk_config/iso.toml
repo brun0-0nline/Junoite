@@ -7,13 +7,13 @@ bootc switch --mutate-in-place --transport registry ghcr.io/brun0-0nline/junoite
 
 [customizations.installer.modules]
 enable = [
-  "org.fedoraproject.Anaconda.Modules.Storage"
+  "org.fedoraproject.Anaconda.Modules.Storage",
+  "org.fedoraproject.Anaconda.Modules.Users" # Needed for KDE since it doesn't create user on 1st boot like GNOME
 ]
 disable = [
   "org.fedoraproject.Anaconda.Modules.Network",
   "org.fedoraproject.Anaconda.Modules.Security",
   "org.fedoraproject.Anaconda.Modules.Services",
-  "org.fedoraproject.Anaconda.Modules.Users",
   "org.fedoraproject.Anaconda.Modules.Subscription",
   "org.fedoraproject.Anaconda.Modules.Timezone"
 ]
